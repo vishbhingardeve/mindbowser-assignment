@@ -17,6 +17,7 @@ import com.mindbowser.entity.ErrorCode;
 import com.mindbowser.exception.BadRequestException;
 import com.mindbowser.exception.ResourceNotFoundException;
 import org.springframework.context.support.DefaultMessageSourceResolvable;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -132,6 +133,15 @@ public class CustomGlobalExceptionHandler extends ResponseEntityExceptionHandler
         log.info(ex.getClass()
                 .getName(), ex.getLocalizedMessage());
         return buildResponseEntity(new ApiMsgResponse(HttpStatus.BAD_REQUEST.value(), "fail", errors), HttpStatus.BAD_REQUEST);
+    }
+
+    @ExceptionHandler(DataIntegrityViolationException.class)
+    public ResponseEntity<Object> handleDataException(DataIntegrityViolationException ex) throws IOException {
+        List<String> errors = new ArrayList<>();
+        errors.add(ex.getLocalizedMessage());
+        log.info(ex.getClass()
+                .getName(), ex.getLocalizedMessage());
+        return buildResponseEntity(new ApiMsgResponse(HttpStatus.BAD_REQUEST.value(), "fail", "Invalid date or format!! It should be YYYY-MM-DD."), HttpStatus.BAD_REQUEST);
     }
 
     @ExceptionHandler({Exception.class})

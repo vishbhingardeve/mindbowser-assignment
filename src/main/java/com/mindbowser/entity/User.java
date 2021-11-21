@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.util.Date;
 import java.util.Set;
 
 @Entity
@@ -15,7 +14,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column
+    @Column(unique=true)
     private String email;
 
     @Column
@@ -29,7 +28,7 @@ public class User {
     private String lastname;
 
     @Column
-    private Date birthDate;
+    private String birthDate;
 
     @Column
     private String address;

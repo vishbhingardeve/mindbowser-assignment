@@ -5,7 +5,9 @@ import com.mindbowser.dto.ApiMsgResponse;
 import com.mindbowser.dto.EmployeeRequestDto;
 import com.mindbowser.entity.Employee;
 import com.mindbowser.exception.BadRequestException;
+import com.mindbowser.service.DateValidator;
 import com.mindbowser.service.EmployeeService;
+import com.mindbowser.service.impl.DateValidatorUsingDateFormat;
 import com.mindbowser.utils.Constants;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
@@ -31,13 +33,17 @@ public class ManagerController {
     private EmployeeDao employeeDao;
 
     @PreAuthorize("hasRole('MANAGER')")
-    @Operation(summary = "Add new employee.", description = "Add new employee in list. (All fields required)", tags = {"Manager Dashboard"}, security = @SecurityRequirement(name = "bearerAuth"))
+    @Operation(summary = "Add new employee.", description = "Add new employee in list. (All fields required & date should be in YYYY-MM-DD format)", tags = {"Manager Dashboard"}, security = @SecurityRequirement(name = "bearerAuth"))
     @RequestMapping(value = "/addEmployee", method = RequestMethod.POST)
     public ResponseEntity<ApiMsgResponse>  addNewEmployee(@RequestBody @Valid EmployeeRequestDto employeeRequestDto){
         log.info("Enter: addNewEmployee Method Type: GET: Request Arguments: {}", employeeRequestDto);
         if (employeeRequestDto.getAddress().isEmpty() || employeeRequestDto.getCity().isEmpty() || employeeRequestDto.getFirstname().isEmpty() ||
                 employeeRequestDto.getLastname().isEmpty() || employeeRequestDto.getMobile().isEmpty() || employeeRequestDto.getBirthDate() == null) {
             throw new BadRequestException("Please provide all inputs.");
+        }
+        DateValidator validator = new DateValidatorUsingDateFormat("yyyy-MM-dd");
+        if(!validator.isValid(employeeRequestDto.getBirthDate())) {
+            throw new BadRequestException("Invalid date and format should be YYYY-MM-DD");
         }
         Employee employeeResponse = employeeService.save(employeeRequestDto);
         log.info("Exit: addNewEmployee Method Type: GET: Response Arguments: {}", employeeResponse);
