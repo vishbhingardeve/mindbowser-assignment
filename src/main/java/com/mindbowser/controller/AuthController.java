@@ -57,13 +57,10 @@ public class AuthController {
             throw new BadRequestException("Email "+userSignUpRequestDto.getEmail()+" is already exist with us.");
         }
 
-        if (userSignUpRequestDto == null) {
-            throw new BadRequestException("Please provide all inputes.");
-        }
-        if (userSignUpRequestDto.getEmail() == null || userSignUpRequestDto.getEmail().isEmpty()) {
+        if (userSignUpRequestDto.getEmail().length() < 1 || userSignUpRequestDto.getEmail().isEmpty()) {
             throw new BadRequestException("Email should not be empty.");
         }
-        if (userSignUpRequestDto.getPassword() == null || userSignUpRequestDto.getPassword().isEmpty()) {
+        if (userSignUpRequestDto.getPassword().length() < 1 || userSignUpRequestDto.getPassword().isEmpty()) {
             throw new BadRequestException("Password should not be empty.");
         }
         User userResponse = userService.save(userSignUpRequestDto);
@@ -74,17 +71,17 @@ public class AuthController {
     @PreAuthorize("permitAll()")
     @Operation(summary = "Manager Sign In.", description = " Sign In Manager", tags = {"Sign Up / Sign In"}, security = @SecurityRequirement(name = "bearerAuth"))
     @RequestMapping(value = "/signin", method = RequestMethod.POST)
-    public ResponseEntity<?> generateToken(@RequestBody @Valid UserSignInRequestDto userSignInRequestDto) throws AuthenticationException {
+    public ResponseEntity<ApiMsgResponse> generateToken(@RequestBody @Valid UserSignInRequestDto userSignInRequestDto) throws AuthenticationException {
 
         log.info("Enter: generateToken Method Type: GET: Request Arguments: {}", userSignInRequestDto);
         User user = userDao.findByEmail(userSignInRequestDto.getEmail().trim());
-        if (userSignInRequestDto.getEmail() == null || userSignInRequestDto.getEmail().isEmpty() && userSignInRequestDto.getPassword() == null || userSignInRequestDto.getPassword().isEmpty()) {
+        if (userSignInRequestDto.getEmail().length() < 1 || userSignInRequestDto.getEmail().isEmpty() && userSignInRequestDto.getPassword().length() < 1 || userSignInRequestDto.getPassword().isEmpty()) {
             throw new BadRequestException("Email and Password should not be empty.");
         }
-        if (userSignInRequestDto.getEmail() == null || userSignInRequestDto.getEmail().isEmpty()) {
+        if (userSignInRequestDto.getEmail().length() < 1|| userSignInRequestDto.getEmail().isEmpty()) {
             throw new BadRequestException("Email should not be empty.");
         }
-        if (userSignInRequestDto.getPassword() == null || userSignInRequestDto.getPassword().isEmpty()) {
+        if (userSignInRequestDto.getPassword().length() < 1 || userSignInRequestDto.getPassword().isEmpty()) {
             throw new BadRequestException("Password should not be empty.");
         }
         if(user==null){
