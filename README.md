@@ -20,3 +20,6 @@
 
 - if want to use swagger documentation hit URL : http://localhost:8080/swagger-ui.html
 
+
+- **NOTE:** this project can use multiple environments like dev, test, stg, prod just changes application properties inside respected properties files.
+
