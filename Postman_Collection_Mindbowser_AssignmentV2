@@ -1,0 +1,507 @@
+{
+	"info": {
+		"_postman_id": "3b9f123e-8ea0-41d8-82b0-698ce8cac79b",
+		"name": "Mindbowser Assignment",
+		"description": "Mindbowser Assignment API's Document.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "employee",
+			"item": [
+				{
+					"name": "Update employee by id.",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "<Bearer Token>",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"address\": \"fugiat mollit ullamco\",\n    \"birthDate\": \"1975-06-22T15:34:31.539Z\",\n    \"city\": \"nulla velit pariatur\",\n    \"firstname\": \"ut magna dolore consectetur in\",\n    \"lastname\": \"incididunt sed in reprehenderit anim\",\n    \"mobile\": \"\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/employee/updateEmployee/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"employee",
+								"updateEmployee",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "72141878",
+									"description": "(Required) "
+								}
+							]
+						},
+						"description": "Update employee details by id. (All fields required)"
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"address\": \"fugiat mollit ullamco\",\n    \"birthDate\": \"1975-06-22T15:34:31.539Z\",\n    \"city\": \"nulla velit pariatur\",\n    \"firstname\": \"ut magna dolore consectetur in\",\n    \"lastname\": \"incididunt sed in reprehenderit anim\",\n    \"mobile\": \"\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/employee/updateEmployee/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"employee",
+										"updateEmployee",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Add new employee.",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"address\": \"fugiat mollit ullamco\",\n    \"birthDate\": \"1975-06-22T15:34:31.539Z\",\n    \"city\": \"nulla velit pariatur\",\n    \"firstname\": \"ut magna dolore consectetur in\",\n    \"lastname\": \"incididunt sed in reprehenderit anim\",\n    \"mobile\": \"\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/employee/addEmployee",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"employee",
+								"addEmployee"
+							]
+						},
+						"description": "Add new employee in list. (All fields required)"
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"address\": \"fugiat mollit ullamco\",\n    \"birthDate\": \"1975-06-22T15:34:31.539Z\",\n    \"city\": \"nulla velit pariatur\",\n    \"firstname\": \"ut magna dolore consectetur in\",\n    \"lastname\": \"incididunt sed in reprehenderit anim\",\n    \"mobile\": \"\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/employee/addEmployee",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"employee",
+										"addEmployee"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Get all employee details.",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/employee/getAllEmployee",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"employee",
+								"getAllEmployee"
+							]
+						},
+						"description": "Get all employee details."
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/employee/getAllEmployee",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"employee",
+										"getAllEmployee"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Delete employee by id.",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/employee/deleteEmployee/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"employee",
+								"deleteEmployee",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "72141878",
+									"description": "(Required) "
+								}
+							]
+						},
+						"description": "Update employee details by id."
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/employee/deleteEmployee/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"employee",
+										"deleteEmployee",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "Manager Sign Up.",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "<Bearer Token>",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"address\": \"exercitation\",\n    \"birthDate\": \"1994-09-04T11:44:42.196Z\",\n    \"companyName\": \"commodo in Duis\",\n    \"email\": \"id magna aliqua\",\n    \"firstname\": \"adipisicing officia irure\",\n    \"lastname\": \"do cillu\",\n    \"password\": \"ad nulla\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/signup",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"signup"
+							]
+						},
+						"description": " Sign Up Manager (Only email & password is mandatory.)"
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"address\": \"exercitation\",\n    \"birthDate\": \"1994-09-04T11:44:42.196Z\",\n    \"companyName\": \"commodo in Duis\",\n    \"email\": \"id magna aliqua\",\n    \"firstname\": \"adipisicing officia irure\",\n    \"lastname\": \"do cillu\",\n    \"password\": \"ad nulla\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/signup",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"signup"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Manager Sign In.",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"vishal@gmail.com\",\n    \"password\": \"123\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/signin",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"signin"
+							]
+						},
+						"description": " Sign In Manager"
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"qui irure\",\n    \"password\": \"in Duis\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/signin",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"signin"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "localhost:8080"
+		},
+		{
+			"key": "token",
+			"value": ""
+		}
+	]
+}
