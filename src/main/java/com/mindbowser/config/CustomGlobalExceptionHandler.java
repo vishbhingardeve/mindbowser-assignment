@@ -16,6 +16,7 @@ import com.mindbowser.dto.ApiMsgResponse;
 import com.mindbowser.entity.ErrorCode;
 import com.mindbowser.exception.BadRequestException;
 import com.mindbowser.exception.ResourceNotFoundException;
+import org.springframework.context.support.DefaultMessageSourceResolvable;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -57,11 +58,10 @@ public class CustomGlobalExceptionHandler extends ResponseEntityExceptionHandler
         List<String> errors = ex.getBindingResult()
                 .getFieldErrors()
                 .stream()
-                .map(x -> x.getDefaultMessage())
+                .map(DefaultMessageSourceResolvable::getDefaultMessage)
                 .collect(Collectors.toList());
 
         body.put("errors", errors);
-        // return new ResponseEntity<>(body, headers, status);
         return buildResponseEntity(new ApiMsgResponse(HttpStatus.BAD_REQUEST.value(), "fail", errors), HttpStatus.BAD_REQUEST);
     }
 
@@ -140,7 +140,7 @@ public class CustomGlobalExceptionHandler extends ResponseEntityExceptionHandler
         log.error("Error occurred ", ex.getLocalizedMessage());
         List<String> errors = new ArrayList<>();
         errors.add(ex.getLocalizedMessage());
-        ex.printStackTrace();
+        log.error("Opps! Error log", ex);
         try {
             if (ex.getLocalizedMessage()
                     .equals("Access is denied")) {
