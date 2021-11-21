@@ -1,0 +1,25 @@
+2021-11-21 10:28:30,588 ERROR com.mindbowser.config.CustomGlobalExceptionHandler [http-nio-8080-exec-4] Error occurred 
+2021-11-21 10:28:41,370 WARN com.mindbowser.config.JwtAuthenticationFilter [http-nio-8080-exec-7] Couldn't find bearer string, header will be ignored
+2021-11-21 10:28:41,372 INFO com.mindbowser.controller.AuthController [http-nio-8080-exec-7] Enter: generateToken Method Type: GET: Request Arguments: UserSignInRequestDto(email=vishal@gmail.com, password=123)
+2021-11-21 10:28:41,489 INFO com.mindbowser.controller.AuthController [http-nio-8080-exec-7] Exit: saveUser Method Type: GET: Response Arguments: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ2aXNoYWxAZ21haWwuY29tIiwicm9sZXMiOiJST0xFX01BTkFHRVIiLCJpYXQiOjE2Mzc0NzA3MjEsImV4cCI6MTYzNzQ4ODcyMX0.IgJzjlFA7nqWppAQt69KTU5TbBLT5heyxD4ZykZDOHQ
+2021-11-21 10:29:12,860 INFO com.mindbowser.config.JwtAuthenticationFilter [http-nio-8080-exec-9] authenticated user vishal@gmail.com, setting security context
+2021-11-21 10:29:12,861 INFO com.mindbowser.controller.ManagerController [http-nio-8080-exec-9] Enter: getAllEmployee Method Type: GET: Request Arguments: Get all employee
+2021-11-21 10:29:12,868 INFO com.mindbowser.controller.ManagerController [http-nio-8080-exec-9] Exit: getAllEmployee Method Type: GET: Response Arguments: [Employee(id=13, firstname=kanu, lastname=kanu, address=Swargate, birthDate=2021-11-21, mobile=1234567890, city=Pune)]
+2021-11-21 10:29:25,631 WARN com.mindbowser.config.JwtAuthenticationFilter [http-nio-8080-exec-8] Couldn't find bearer string, header will be ignored
+2021-11-21 10:29:25,634 ERROR com.mindbowser.config.CustomGlobalExceptionHandler [http-nio-8080-exec-8] Error occurred 
+2021-11-21 10:29:30,425 INFO com.mindbowser.config.JwtAuthenticationFilter [http-nio-8080-exec-1] authenticated user vishal@gmail.com, setting security context
+2021-11-21 10:29:30,427 INFO com.mindbowser.controller.ManagerController [http-nio-8080-exec-1] Enter: getAllEmployee Method Type: GET: Request Arguments: Get all employee
+2021-11-21 10:29:30,431 INFO com.mindbowser.controller.ManagerController [http-nio-8080-exec-1] Exit: getAllEmployee Method Type: GET: Response Arguments: [Employee(id=13, firstname=kanu, lastname=kanu, address=Swargate, birthDate=2021-11-21, mobile=1234567890, city=Pune)]
+2021-11-21 10:32:41,036 INFO com.mindbowser.config.JwtAuthenticationFilter [http-nio-8080-exec-3] authenticated user vishal@gmail.com, setting security context
+2021-11-21 10:32:41,038 INFO com.mindbowser.controller.ManagerController [http-nio-8080-exec-3] Enter: updateEmployee Method Type: GET: Request Arguments: EmployeeRequestDto(firstname=Vish, lastname=kanu, address=Swargate, birthDate=Sun Nov 21 05:30:00 IST 2021, mobile=1234567890, city=Pune)
+2021-11-21 10:32:41,040 INFO com.mindbowser.config.CustomGlobalExceptionHandler [http-nio-8080-exec-3] com.mindbowser.exception.BadRequestException
+2021-11-21 10:33:04,462 INFO com.mindbowser.config.JwtAuthenticationFilter [http-nio-8080-exec-6] authenticated user vishal@gmail.com, setting security context
+2021-11-21 10:33:04,464 INFO com.mindbowser.controller.ManagerController [http-nio-8080-exec-6] Enter: updateEmployee Method Type: GET: Request Arguments: EmployeeRequestDto(firstname=Vish, lastname=kanu, address=Swargate, birthDate=Sun Nov 21 05:30:00 IST 2021, mobile=1234567890, city=Pune)
+2021-11-21 10:33:04,473 INFO com.mindbowser.controller.ManagerController [http-nio-8080-exec-6] Exit: updateEmployee Method Type: GET: Response Arguments: EmployeeRequestDto(firstname=Vish, lastname=kanu, address=Swargate, birthDate=Sun Nov 21 05:30:00 IST 2021, mobile=1234567890, city=Pune)
+2021-11-21 10:33:35,362 INFO com.mindbowser.config.JwtAuthenticationFilter [http-nio-8080-exec-4] authenticated user vishal@gmail.com, setting security context
+2021-11-21 10:33:35,365 INFO com.mindbowser.controller.ManagerController [http-nio-8080-exec-4] Enter: addNewEmployee Method Type: GET: Request Arguments: EmployeeRequestDto(firstname=Ram, lastname=kanu, address=Swargate, birthDate=Sun Nov 21 05:30:00 IST 2021, mobile=, city=Pune)
+2021-11-21 10:33:35,366 INFO com.mindbowser.config.CustomGlobalExceptionHandler [http-nio-8080-exec-4] com.mindbowser.exception.BadRequestException
+2021-11-21 10:33:44,202 INFO com.mindbowser.config.JwtAuthenticationFilter [http-nio-8080-exec-7] authenticated user vishal@gmail.com, setting security context
+2021-11-21 10:33:48,790 INFO com.mindbowser.config.JwtAuthenticationFilter [http-nio-8080-exec-1] authenticated user vishal@gmail.com, setting security context
+2021-11-21 10:33:48,792 INFO com.mindbowser.controller.ManagerController [http-nio-8080-exec-1] Enter: addNewEmployee Method Type: GET: Request Arguments: EmployeeRequestDto(firstname=Ram, lastname=kanu, address=Swargate, birthDate=Sun Nov 21 05:30:00 IST 2021, mobile=1234567890, city=Pune)
+2021-11-21 10:33:48,799 INFO com.mindbowser.controller.ManagerController [http-nio-8080-exec-1] Exit: addNewEmployee Method Type: GET: Response Arguments: Employee(id=14, firstname=Ram, lastname=kanu, address=Swargate, birthDate=Sun Nov 21 05:30:00 IST 2021, mobile=1234567890, city=Pune)

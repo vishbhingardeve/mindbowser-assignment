@@ -1,0 +1,17 @@
+2021-11-21 10:34:01,679 INFO com.mindbowser.config.JwtAuthenticationFilter [http-nio-8080-exec-10] authenticated user vishal@gmail.com, setting security context
+2021-11-21 10:34:01,686 INFO com.mindbowser.controller.ManagerController [http-nio-8080-exec-10] Enter: getAllEmployee Method Type: GET: Request Arguments: Get all employee
+2021-11-21 10:34:01,694 INFO com.mindbowser.controller.ManagerController [http-nio-8080-exec-10] Exit: getAllEmployee Method Type: GET: Response Arguments: [Employee(id=14, firstname=Ram, lastname=kanu, address=Swargate, birthDate=2021-11-21, mobile=1234567890, city=Pune), Employee(id=13, firstname=Vish, lastname=kanu, address=Swargate, birthDate=2021-11-21, mobile=1234567890, city=Pune)]
+2021-11-21 10:34:19,519 INFO com.mindbowser.config.JwtAuthenticationFilter [http-nio-8080-exec-2] authenticated user vishal@gmail.com, setting security context
+2021-11-21 10:34:19,522 INFO com.mindbowser.controller.ManagerController [http-nio-8080-exec-2] Enter: deleteEmployee Method Type: GET: Request Arguments: 1344
+2021-11-21 10:34:19,525 INFO com.mindbowser.config.CustomGlobalExceptionHandler [http-nio-8080-exec-2] com.mindbowser.exception.BadRequestException
+2021-11-21 10:34:24,114 INFO com.mindbowser.config.JwtAuthenticationFilter [http-nio-8080-exec-5] authenticated user vishal@gmail.com, setting security context
+2021-11-21 10:34:24,118 INFO com.mindbowser.controller.ManagerController [http-nio-8080-exec-5] Enter: deleteEmployee Method Type: GET: Request Arguments: 13
+2021-11-21 10:34:24,127 INFO com.mindbowser.controller.ManagerController [http-nio-8080-exec-5] Exit: deleteEmployee Method Type: GET: Response Arguments: Deleted
+2021-11-21 10:34:30,422 INFO com.mindbowser.config.JwtAuthenticationFilter [http-nio-8080-exec-6] authenticated user vishal@gmail.com, setting security context
+2021-11-21 10:34:30,424 INFO com.mindbowser.controller.ManagerController [http-nio-8080-exec-6] Enter: getAllEmployee Method Type: GET: Request Arguments: Get all employee
+2021-11-21 10:34:30,428 INFO com.mindbowser.controller.ManagerController [http-nio-8080-exec-6] Exit: getAllEmployee Method Type: GET: Response Arguments: [Employee(id=14, firstname=Ram, lastname=kanu, address=Swargate, birthDate=2021-11-21, mobile=1234567890, city=Pune)]
+2021-11-21 10:35:09,734 ERROR com.mindbowser.config.JwtAuthenticationFilter [http-nio-8080-exec-4] Authentication Failed. Username or Password not valid.
+2021-11-21 10:35:09,736 ERROR com.mindbowser.config.CustomGlobalExceptionHandler [http-nio-8080-exec-4] Error occurred 
+2021-11-21 10:35:19,038 INFO com.mindbowser.config.JwtAuthenticationFilter [http-nio-8080-exec-9] authenticated user vishal@gmail.com, setting security context
+2021-11-21 10:35:19,039 INFO com.mindbowser.controller.ManagerController [http-nio-8080-exec-9] Enter: getAllEmployee Method Type: GET: Request Arguments: Get all employee
+2021-11-21 10:35:19,046 INFO com.mindbowser.controller.ManagerController [http-nio-8080-exec-9] Exit: getAllEmployee Method Type: GET: Response Arguments: [Employee(id=14, firstname=Ram, lastname=kanu, address=Swargate, birthDate=2021-11-21, mobile=1234567890, city=Pune)]
