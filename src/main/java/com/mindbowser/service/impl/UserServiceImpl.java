@@ -41,9 +41,7 @@ public class UserServiceImpl implements UserDetailsService, UserService {
 
     private Set<SimpleGrantedAuthority> getAuthority(User user) {
         Set<SimpleGrantedAuthority> authorities = new HashSet<>();
-        user.getRoles().forEach(role -> {
-            authorities.add(new SimpleGrantedAuthority("ROLE_" + role.getName()));
-        });
+        user.getRoles().forEach(role -> authorities.add(new SimpleGrantedAuthority("ROLE_" + role.getName())));
         return authorities;
     }
 
@@ -69,18 +67,9 @@ public class UserServiceImpl implements UserDetailsService, UserService {
         userSave.setAddress(user.getAddress());
         userSave.setCompanyName(user.getCompanyName());
         userSave.setPassword(bcryptEncoder.encode(user.getPassword()));
-
         Role role = roleService.findByName("MANAGER");
         Set<Role> roleSet = new HashSet<>();
         roleSet.add(role);
-
-        // if we want to sign up employee then uncomment this lines
-        // provide domain as employee.com to register as employee
-        /*if(userSave.getEmail().split("@")[1].equals("employee.com")){
-            role = roleService.findByName("EMPLOYEE");
-            roleSet.add(role);
-        }*/
-
         userSave.setRoles(roleSet);
         return userDao.save(userSave);
     }
