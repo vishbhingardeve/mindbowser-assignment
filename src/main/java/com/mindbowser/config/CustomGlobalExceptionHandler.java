@@ -61,7 +61,6 @@ public class CustomGlobalExceptionHandler extends ResponseEntityExceptionHandler
                 .collect(Collectors.toList());
 
         body.put("errors", errors);
-
         // return new ResponseEntity<>(body, headers, status);
         return buildResponseEntity(new ApiMsgResponse(HttpStatus.BAD_REQUEST.value(), "fail", errors), HttpStatus.BAD_REQUEST);
     }
@@ -121,7 +120,7 @@ public class CustomGlobalExceptionHandler extends ResponseEntityExceptionHandler
                     .equals("Bad credentials")) {
                 final ApiMsgResponse apiError = new ApiMsgResponse(HttpStatus.FORBIDDEN.value(), "fail",
                         Collections.singletonList("Please enter correct password."));
-                return new ResponseEntity<Object>(apiError, new HttpHeaders(), HttpStatus.NOT_FOUND);
+                return new ResponseEntity<>(apiError, new HttpHeaders(), HttpStatus.NOT_FOUND);
             }
             return null;
     }
@@ -147,9 +146,10 @@ public class CustomGlobalExceptionHandler extends ResponseEntityExceptionHandler
                     .equals("Access is denied")) {
                 final ApiMsgResponse apiError = new ApiMsgResponse(HttpStatus.FORBIDDEN.value(), "fail",
                         Collections.singletonList("Please sign in first to access this resource."));
-                return new ResponseEntity<Object>(apiError, new HttpHeaders(), HttpStatus.FORBIDDEN);
+                return new ResponseEntity<>(apiError, new HttpHeaders(), HttpStatus.FORBIDDEN);
             }
-        } catch (Exception ignored) {
+        } finally {
+            log.info("Enter: exception Exception Type: Exception: Request Arguments: {}");
         }
 
         return buildResponseEntity(new ApiMsgResponse(HttpStatus.INTERNAL_SERVER_ERROR.value(), ex.getMessage(), errors, "some thing went wrong"),
@@ -165,7 +165,6 @@ public class CustomGlobalExceptionHandler extends ResponseEntityExceptionHandler
     }
 
     private ResponseEntity<Object> buildResponseEntity(ApiMsgResponse apiError, HttpStatus status) {
-
         return new ResponseEntity<>(apiError, status);
     }
 }
