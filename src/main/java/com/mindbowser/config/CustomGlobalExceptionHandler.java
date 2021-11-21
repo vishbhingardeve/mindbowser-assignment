@@ -40,7 +40,7 @@ public class CustomGlobalExceptionHandler extends ResponseEntityExceptionHandler
     @ExceptionHandler(ConstraintViolationException.class)
     public ResponseEntity<Object> constraintViolationException(ConstraintViolationException ex) throws IOException {
 
-        List<String> errors = new ArrayList<String>();
+        List<String> errors = new ArrayList<>();
         errors.add(ex.getLocalizedMessage());
         return buildResponseEntity(new ApiMsgResponse(ErrorCode.BAD_REQUEST.getCode(), ex.getMessage(), errors, null), HttpStatus.BAD_REQUEST);
     }
@@ -69,7 +69,7 @@ public class CustomGlobalExceptionHandler extends ResponseEntityExceptionHandler
     @Override
     protected ResponseEntity<Object> handleHttpMessageNotReadable(HttpMessageNotReadableException ex, HttpHeaders headers, HttpStatus status,
                                                                   WebRequest request) {
-        List<String> errors = new ArrayList<String>();
+        List<String> errors = new ArrayList<>();
         errors.add(ex.getLocalizedMessage());
         return buildResponseEntity(new ApiMsgResponse(HttpStatus.BAD_REQUEST.value(), "fail", Collections.singletonList("invalid JSON request body")),
                 HttpStatus.BAD_REQUEST);
@@ -77,28 +77,28 @@ public class CustomGlobalExceptionHandler extends ResponseEntityExceptionHandler
 
     @ExceptionHandler(HttpServerErrorException.class)
     public ResponseEntity<Object> handleHttpServerErrorException(HttpServerErrorException ex) throws IOException {
-        List<String> errors = new ArrayList<String>();
+        List<String> errors = new ArrayList<>();
         errors.add(ex.getLocalizedMessage());
         return buildResponseEntity(new ApiMsgResponse(HttpStatus.SERVICE_UNAVAILABLE.value(), "fail", errors), HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
     @ExceptionHandler(FileNotFoundException.class)
     public ResponseEntity<Object> handleFileNotFoundException(FileNotFoundException ex) throws IOException {
-        List<String> errors = new ArrayList<String>();
+        List<String> errors = new ArrayList<>();
         errors.add(ex.getLocalizedMessage());
         return buildResponseEntity(new ApiMsgResponse(HttpStatus.NOT_FOUND.value(), "fail", errors), HttpStatus.NOT_FOUND);
     }
 
     @ExceptionHandler(ResourceAccessException.class)
     public ResponseEntity<Object> handleResourceAccessException(ResourceAccessException ex) throws IOException {
-        List<String> errors = new ArrayList<String>();
+        List<String> errors = new ArrayList<>();
         errors.add(ex.getLocalizedMessage());
         return buildResponseEntity(new ApiMsgResponse(HttpStatus.SERVICE_UNAVAILABLE.value(), "fail", errors), HttpStatus.SERVICE_UNAVAILABLE);
     }
 
     @ExceptionHandler(HttpClientErrorException.class)
     public ResponseEntity<Object> handleHttpClientErrorException(HttpClientErrorException ex) throws IOException {
-        List<String> errors = new ArrayList<String>();
+        List<String> errors = new ArrayList<>();
         errors.add(ex.getLocalizedMessage());
         return buildResponseEntity(new ApiMsgResponse(ex.getStatusCode()
                 .value(), "fail", errors), ex.getStatusCode());
@@ -106,14 +106,14 @@ public class CustomGlobalExceptionHandler extends ResponseEntityExceptionHandler
 
     @ExceptionHandler(ResourceNotFoundException.class)
     public ResponseEntity<Object> handleResourceNotFoundException(ResourceNotFoundException ex) throws IOException {
-        List<String> errors = new ArrayList<String>();
+        List<String> errors = new ArrayList<>();
         errors.add(ex.getLocalizedMessage());
         return buildResponseEntity(new ApiMsgResponse(HttpStatus.NOT_FOUND.value(), "fail", errors), HttpStatus.NOT_FOUND);
     }
 
     @ExceptionHandler(BadCredentialsException.class)
     public ResponseEntity<Object> handleResourceNotFoundException(BadCredentialsException ex) throws IOException {
-        List<String> errors = new ArrayList<String>();
+        List<String> errors = new ArrayList<>();
         log.error("Error occurred ", ex.getLocalizedMessage());
         errors.add(ex.getLocalizedMessage());
         ex.printStackTrace();
@@ -128,7 +128,7 @@ public class CustomGlobalExceptionHandler extends ResponseEntityExceptionHandler
 
     @ExceptionHandler(BadRequestException.class)
     public ResponseEntity<Object> handleBadRequestException(BadRequestException ex) throws IOException {
-        List<String> errors = new ArrayList<String>();
+        List<String> errors = new ArrayList<>();
         errors.add(ex.getLocalizedMessage());
         log.info(ex.getClass()
                 .getName(), ex.getLocalizedMessage());
@@ -139,7 +139,7 @@ public class CustomGlobalExceptionHandler extends ResponseEntityExceptionHandler
     public ResponseEntity<Object> handleAllException(Exception ex) {
 
         log.error("Error occurred ", ex.getLocalizedMessage());
-        List<String> errors = new ArrayList<String>();
+        List<String> errors = new ArrayList<>();
         errors.add(ex.getLocalizedMessage());
         ex.printStackTrace();
         try {
@@ -158,7 +158,7 @@ public class CustomGlobalExceptionHandler extends ResponseEntityExceptionHandler
 
     @ExceptionHandler({ResponseStatusException.class})
     public ResponseEntity<Object> handleResponseStatusException(ResponseStatusException ex) {
-        List<String> errors = new ArrayList<String>();
+        List<String> errors = new ArrayList<>();
         errors.add(ex.getReason());
         return buildResponseEntity(new ApiMsgResponse(ex.getStatus()
                 .value(), "fail", errors), ex.getStatus());
