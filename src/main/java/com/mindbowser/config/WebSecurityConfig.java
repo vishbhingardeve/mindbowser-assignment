@@ -1,5 +1,6 @@
 package com.mindbowser.config;
 
+import com.mindbowser.utils.Constants;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -65,10 +66,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .permitAll()
                 .antMatchers("/v3/api-docs", "/configuration/**", "/swagger*/**", "/webjars/**",
                 "/auth/**", "/**").permitAll()
-                .antMatchers(HttpMethod.POST, "/employee/**").permitAll()
-                .antMatchers(HttpMethod.GET, "/employee/**").permitAll()
-                .antMatchers(HttpMethod.PUT, "/employee/**").permitAll()
-                .antMatchers(HttpMethod.DELETE, "/employee/**").permitAll()
+                .antMatchers(HttpMethod.POST, "/"+ Constants.EMPLOYEE +"/**").permitAll()
+                .antMatchers(HttpMethod.GET, "/"+ Constants.EMPLOYEE +"/**").permitAll()
+                .antMatchers(HttpMethod.PUT, "/"+ Constants.EMPLOYEE +"/**").permitAll()
+                .antMatchers(HttpMethod.DELETE, "/"+ Constants.EMPLOYEE +"/**").permitAll()
                 .antMatchers("/oauth2/**").permitAll()
                 .antMatchers("/auth/**", "/oauth2/**")
                 .permitAll()

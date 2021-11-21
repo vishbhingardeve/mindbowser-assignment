@@ -14,4 +14,5 @@ public class Constants {
     public static final String BAD_REQUEST = "Bad request";
     public static final String NOT_AUTHENTICATED = "Not authenticated";
     public static final String INTERNAL_SERVER_ERROR = "Internal server error";
+    public static final String EMPLOYEE = "employee";
 }
