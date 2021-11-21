@@ -18,8 +18,14 @@
 - find postman collection in project named **Postman_Collection_Mindbowser_AssignmentV2** and import in your postman to use API's.
 
 
-- if want to use swagger documentation hit URL : http://localhost:8080/swagger-ui.html
+    OR
+
+
+- use swagger documentation hit URL : http://localhost:8080/swagger-ui.html
 
 
 - **NOTE:** this project can use multiple environments like dev, test, stg, prod just changes application properties inside respected properties files.
+
+
+- **NOTE** my local schema script added for reference named mindbowser.sql in resource folder. 
 
