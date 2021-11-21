@@ -8,7 +8,9 @@ import com.mindbowser.dto.UserSignInRequestDto;
 import com.mindbowser.dto.UserSignUpRequestDto;
 import com.mindbowser.entity.User;
 import com.mindbowser.exception.BadRequestException;
+import com.mindbowser.service.DateValidator;
 import com.mindbowser.service.UserService;
+import com.mindbowser.service.impl.DateValidatorUsingDateFormat;
 import com.mindbowser.utils.Constants;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
@@ -48,10 +50,11 @@ public class AuthController {
     UserDao userDao;
 
     @PreAuthorize("permitAll()")
-    @Operation(summary = "Manager Sign Up.", description = " Sign Up Manager (Only email & password is mandatory.)", tags = {"Sign Up / Sign In"}, security = @SecurityRequirement(name = "bearerAuth"))
+    @Operation(summary = "Manager Sign Up.", description = " Sign Up Manager (Only email & password is mandatory & date should be in YYYY-MM-DD format)", tags = {"Sign Up / Sign In"}, security = @SecurityRequirement(name = "bearerAuth"))
     @RequestMapping(value="/signup", method = RequestMethod.POST)
     public ResponseEntity<ApiMsgResponse> saveUser(@RequestBody @Valid UserSignUpRequestDto userSignUpRequestDto){
         log.info("Enter: saveUser Method Type: GET: Request Arguments: {}", userSignUpRequestDto);
+
         User user = userDao.findByEmail(userSignUpRequestDto.getEmail());
         if(user != null && user.getEmail().equalsIgnoreCase(userSignUpRequestDto.getEmail().trim())){
             throw new BadRequestException("Email "+userSignUpRequestDto.getEmail()+" is already exist with us.");
@@ -62,6 +65,10 @@ public class AuthController {
         }
         if (userSignUpRequestDto.getPassword().length() < 1 || userSignUpRequestDto.getPassword().isEmpty()) {
             throw new BadRequestException("Password should not be empty.");
+        }
+        DateValidator validator = new DateValidatorUsingDateFormat("yyyy-MM-dd");
+        if(!validator.isValid(userSignUpRequestDto.getBirthDate())) {
+            throw new BadRequestException("Invalid date and format should be YYYY-MM-DD");
         }
         User userResponse = userService.save(userSignUpRequestDto);
         log.info("Exit: saveUser Method Type: GET: Response Arguments: {}", userResponse);

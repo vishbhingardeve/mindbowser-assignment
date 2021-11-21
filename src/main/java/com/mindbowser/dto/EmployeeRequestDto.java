@@ -2,12 +2,9 @@ package com.mindbowser.dto;
 
 import lombok.*;
 
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import java.io.Serializable;
-import java.util.Date;
 
 @Getter
 @Setter
@@ -27,8 +24,7 @@ public class EmployeeRequestDto implements Serializable {
     private String address;
 
     @NotNull(message = "Birth date should not be empty.")
-    @Temporal(TemporalType.DATE)
-    private Date birthDate;
+    private String birthDate;
 
     @NotNull(message = "Mobile should not be empty.")
     @Pattern(regexp="(^$|[0-9]{10})", message="Please enter correct mobile number.")

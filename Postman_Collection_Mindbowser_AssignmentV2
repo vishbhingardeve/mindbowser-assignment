@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "3b9f123e-8ea0-41d8-82b0-698ce8cac79b",
+		"_postman_id": "082ce339-cf4d-43d4-87a5-b356967f20ee",
 		"name": "Mindbowser Assignment",
 		"description": "Mindbowser Assignment API's Document.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -31,7 +31,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"address\": \"fugiat mollit ullamco\",\n    \"birthDate\": \"1975-06-22T15:34:31.539Z\",\n    \"city\": \"nulla velit pariatur\",\n    \"firstname\": \"ut magna dolore consectetur in\",\n    \"lastname\": \"incididunt sed in reprehenderit anim\",\n    \"mobile\": \"\"\n}"
+							"raw": "{\n    \"address\": \"adipisicing dol\",\n    \"birthDate\": \"amet in dolor nostrud\",\n    \"city\": \"consequat labore ea laborum\",\n    \"firstname\": \"quis veniam aliqua\",\n    \"lastname\": \"culpa irure commodo cupidatat\",\n    \"mobile\": \"\"\n}"
 						},
 						"url": {
 							"raw": "{{baseUrl}}/employee/updateEmployee/:id",
@@ -46,7 +46,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "72141878",
+									"value": "61917316",
 									"description": "(Required) "
 								}
 							]
@@ -67,7 +67,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"address\": \"fugiat mollit ullamco\",\n    \"birthDate\": \"1975-06-22T15:34:31.539Z\",\n    \"city\": \"nulla velit pariatur\",\n    \"firstname\": \"ut magna dolore consectetur in\",\n    \"lastname\": \"incididunt sed in reprehenderit anim\",\n    \"mobile\": \"\"\n}"
+									"raw": "{\n    \"address\": \"adipisicing dol\",\n    \"birthDate\": \"amet in dolor nostrud\",\n    \"city\": \"consequat labore ea laborum\",\n    \"firstname\": \"quis veniam aliqua\",\n    \"lastname\": \"culpa irure commodo cupidatat\",\n    \"mobile\": \"\"\n}"
 								},
 								"url": {
 									"raw": "{{baseUrl}}/employee/updateEmployee/:id",
@@ -108,7 +108,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "{{token}}",
+									"value": "<Bearer Token>",
 									"type": "string"
 								}
 							]
@@ -122,7 +122,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"address\": \"fugiat mollit ullamco\",\n    \"birthDate\": \"1975-06-22T15:34:31.539Z\",\n    \"city\": \"nulla velit pariatur\",\n    \"firstname\": \"ut magna dolore consectetur in\",\n    \"lastname\": \"incididunt sed in reprehenderit anim\",\n    \"mobile\": \"\"\n}"
+							"raw": "{\n    \"address\": \"adipisicing dol\",\n    \"birthDate\": \"amet in dolor nostrud\",\n    \"city\": \"consequat labore ea laborum\",\n    \"firstname\": \"quis veniam aliqua\",\n    \"lastname\": \"culpa irure commodo cupidatat\",\n    \"mobile\": \"\"\n}"
 						},
 						"url": {
 							"raw": "{{baseUrl}}/employee/addEmployee",
@@ -134,7 +134,7 @@
 								"addEmployee"
 							]
 						},
-						"description": "Add new employee in list. (All fields required)"
+						"description": "Add new employee in list. (All fields required & date should be in YYYY-MM-DD format)"
 					},
 					"response": [
 						{
@@ -150,7 +150,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"address\": \"fugiat mollit ullamco\",\n    \"birthDate\": \"1975-06-22T15:34:31.539Z\",\n    \"city\": \"nulla velit pariatur\",\n    \"firstname\": \"ut magna dolore consectetur in\",\n    \"lastname\": \"incididunt sed in reprehenderit anim\",\n    \"mobile\": \"\"\n}"
+									"raw": "{\n    \"address\": \"adipisicing dol\",\n    \"birthDate\": \"amet in dolor nostrud\",\n    \"city\": \"consequat labore ea laborum\",\n    \"firstname\": \"quis veniam aliqua\",\n    \"lastname\": \"culpa irure commodo cupidatat\",\n    \"mobile\": \"\"\n}"
 								},
 								"url": {
 									"raw": "{{baseUrl}}/employee/addEmployee",
@@ -185,7 +185,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "{{token}}",
+									"value": "<Bearer Token>",
 									"type": "string"
 								}
 							]
@@ -249,7 +249,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "{{token}}",
+									"value": "<Bearer Token>",
 									"type": "string"
 								}
 							]
@@ -269,7 +269,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "72141878",
+									"value": "61917316",
 									"description": "(Required) "
 								}
 							]
@@ -346,7 +346,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"address\": \"exercitation\",\n    \"birthDate\": \"1994-09-04T11:44:42.196Z\",\n    \"companyName\": \"commodo in Duis\",\n    \"email\": \"id magna aliqua\",\n    \"firstname\": \"adipisicing officia irure\",\n    \"lastname\": \"do cillu\",\n    \"password\": \"ad nulla\"\n}"
+							"raw": "{\n    \"address\": \"in irure ad\",\n    \"birthDate\": \"cillum\",\n    \"companyName\": \"tempor et\",\n    \"email\": \"ut est et deserunt\",\n    \"firstname\": \"elit culpa non ut in\",\n    \"lastname\": \"minim Lorem veniam\",\n    \"password\": \"qui in\"\n}"
 						},
 						"url": {
 							"raw": "{{baseUrl}}/auth/signup",
@@ -358,7 +358,7 @@
 								"signup"
 							]
 						},
-						"description": " Sign Up Manager (Only email & password is mandatory.)"
+						"description": " Sign Up Manager (Only email & password is mandatory & date should be in YYYY-MM-DD format)"
 					},
 					"response": [
 						{
@@ -374,7 +374,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"address\": \"exercitation\",\n    \"birthDate\": \"1994-09-04T11:44:42.196Z\",\n    \"companyName\": \"commodo in Duis\",\n    \"email\": \"id magna aliqua\",\n    \"firstname\": \"adipisicing officia irure\",\n    \"lastname\": \"do cillu\",\n    \"password\": \"ad nulla\"\n}"
+									"raw": "{\n    \"address\": \"in irure ad\",\n    \"birthDate\": \"cillum\",\n    \"companyName\": \"tempor et\",\n    \"email\": \"ut est et deserunt\",\n    \"firstname\": \"elit culpa non ut in\",\n    \"lastname\": \"minim Lorem veniam\",\n    \"password\": \"qui in\"\n}"
 								},
 								"url": {
 									"raw": "{{baseUrl}}/auth/signup",
@@ -405,7 +405,14 @@
 					"name": "Manager Sign In.",
 					"request": {
 						"auth": {
-							"type": "noauth"
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "<Bearer Token>",
+									"type": "string"
+								}
+							]
 						},
 						"method": "POST",
 						"header": [
@@ -416,7 +423,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"email\": \"vishal@gmail.com\",\n    \"password\": \"123\"\n}"
+							"raw": "{\n    \"email\": \"esse laboris\",\n    \"password\": \"ut sunt et anim\"\n}"
 						},
 						"url": {
 							"raw": "{{baseUrl}}/auth/signin",
@@ -444,7 +451,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"email\": \"qui irure\",\n    \"password\": \"in Duis\"\n}"
+									"raw": "{\n    \"email\": \"esse laboris\",\n    \"password\": \"ut sunt et anim\"\n}"
 								},
 								"url": {
 									"raw": "{{baseUrl}}/auth/signin",
@@ -474,34 +481,11 @@
 			]
 		}
 	],
-	"event": [
-		{
-			"listen": "prerequest",
-			"script": {
-				"type": "text/javascript",
-				"exec": [
-					""
-				]
-			}
-		},
-		{
-			"listen": "test",
-			"script": {
-				"type": "text/javascript",
-				"exec": [
-					""
-				]
-			}
-		}
-	],
 	"variable": [
 		{
 			"key": "baseUrl",
-			"value": "localhost:8080"
-		},
-		{
-			"key": "token",
-			"value": ""
+			"value": "http://localhost:8080/",
+			"type": "string"
 		}
 	]
 }
