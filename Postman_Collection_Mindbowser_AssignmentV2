@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "082ce339-cf4d-43d4-87a5-b356967f20ee",
+		"_postman_id": "b917fd87-030a-4da7-846d-2ea860323d38",
 		"name": "Mindbowser Assignment",
 		"description": "Mindbowser Assignment API's Document.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -17,7 +17,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "<Bearer Token>",
+									"value": "{{token}}",
 									"type": "string"
 								}
 							]
@@ -31,24 +31,17 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"address\": \"adipisicing dol\",\n    \"birthDate\": \"amet in dolor nostrud\",\n    \"city\": \"consequat labore ea laborum\",\n    \"firstname\": \"quis veniam aliqua\",\n    \"lastname\": \"culpa irure commodo cupidatat\",\n    \"mobile\": \"\"\n}"
+							"raw": "{\n    \"firstname\": \"Vish\",\n    \"lastname\": \"Vish\",\n    \"address\": \"Swargate\",\n    \"birthDate\": \"1996-09-22\",\n    \"mobile\": \"1234567890\",\n    \"city\": \"Sangli\"\n}"
 						},
 						"url": {
-							"raw": "{{baseUrl}}/employee/updateEmployee/:id",
+							"raw": "{{baseUrl}}/employee/updateEmployee/1",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
 								"employee",
 								"updateEmployee",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id",
-									"value": "61917316",
-									"description": "(Required) "
-								}
+								"1"
 							]
 						},
 						"description": "Update employee details by id. (All fields required)"
@@ -108,7 +101,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "<Bearer Token>",
+									"value": "{{token}}",
 									"type": "string"
 								}
 							]
@@ -122,7 +115,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"address\": \"adipisicing dol\",\n    \"birthDate\": \"amet in dolor nostrud\",\n    \"city\": \"consequat labore ea laborum\",\n    \"firstname\": \"quis veniam aliqua\",\n    \"lastname\": \"culpa irure commodo cupidatat\",\n    \"mobile\": \"\"\n}"
+							"raw": "{\n    \"firstname\": \"Vish\",\n    \"lastname\": \"Vish\",\n    \"address\": \"Swargate\",\n    \"birthDate\": \"1996-09-22\",\n    \"mobile\": \"1234567890\",\n    \"city\": \"Sangli\"\n}"
 						},
 						"url": {
 							"raw": "{{baseUrl}}/employee/addEmployee",
@@ -185,7 +178,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "<Bearer Token>",
+									"value": "{{token}}",
 									"type": "string"
 								}
 							]
@@ -249,7 +242,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "<Bearer Token>",
+									"value": "{{token}}",
 									"type": "string"
 								}
 							]
@@ -257,21 +250,14 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/employee/deleteEmployee/:id",
+							"raw": "{{baseUrl}}/employee/deleteEmployee/3",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
 								"employee",
 								"deleteEmployee",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id",
-									"value": "61917316",
-									"description": "(Required) "
-								}
+								"3"
 							]
 						},
 						"description": "Update employee details by id."
@@ -328,14 +314,7 @@
 					"name": "Manager Sign Up.",
 					"request": {
 						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "<Bearer Token>",
-									"type": "string"
-								}
-							]
+							"type": "noauth"
 						},
 						"method": "POST",
 						"header": [
@@ -346,7 +325,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"address\": \"in irure ad\",\n    \"birthDate\": \"cillum\",\n    \"companyName\": \"tempor et\",\n    \"email\": \"ut est et deserunt\",\n    \"firstname\": \"elit culpa non ut in\",\n    \"lastname\": \"minim Lorem veniam\",\n    \"password\": \"qui in\"\n}"
+							"raw": "{\n    \"address\": \"Swargate\",\n    \"birthDate\": \"1996-09-22\",\n    \"companyName\": \"Barquecon\",\n    \"email\": \"vs@gmail.com\",\n    \"firstname\": \"Vishal\",\n    \"lastname\": \"Bhingardeve\",\n    \"password\": \"123456\"\n}"
 						},
 						"url": {
 							"raw": "{{baseUrl}}/auth/signup",
@@ -405,14 +384,7 @@
 					"name": "Manager Sign In.",
 					"request": {
 						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "<Bearer Token>",
-									"type": "string"
-								}
-							]
+							"type": "noauth"
 						},
 						"method": "POST",
 						"header": [
@@ -423,7 +395,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"email\": \"esse laboris\",\n    \"password\": \"ut sunt et anim\"\n}"
+							"raw": "{\n    \"email\": \"vs@gmail.com\",\n    \"password\": \"123456\"\n}"
 						},
 						"url": {
 							"raw": "{{baseUrl}}/auth/signin",
@@ -481,11 +453,34 @@
 			]
 		}
 	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
 	"variable": [
 		{
 			"key": "baseUrl",
-			"value": "http://localhost:8080/",
-			"type": "string"
+			"value": "http://localhost:8080"
+		},
+		{
+			"key": "token",
+			"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ2c0BnbWFpbC5jb20iLCJyb2xlcyI6IlJPTEVfTUFOQUdFUiIsImlhdCI6MTYzNzU1Mzc1NCwiZXhwIjoxNjM3NTcxNzU0fQ.lvnKvaimSBF5Gr-sXITDVkyyD183KdKlLuaj2gSE0UU"
 		}
 	]
 }
