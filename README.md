@@ -3,10 +3,16 @@
 - clone project from github https://github.com/vishbhingardeve/mindbowser-assignment.git
 
 
+- use develop branch in github.
+
+
 - create database as **mindbowser**.
 
 
 - run sql script named **initial_run_query.sql** available in resource folder.
+
+
+- changes and put your db username and password in application properties file.
 
 
 - update & install maven dependency and build project.
